@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BGMI Team Tracker + AI Insights</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>BGMI Scrim & Weekly War Tracker</h1>
+      <p>Track player performance daily and get AI-style improvement insights.</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Add Match Performance</h2>
+        <form id="matchForm">
+          <div class="grid">
+            <label>
+              Player Name
+              <input id="playerName" type="text" required placeholder="e.g. Shadow" />
+            </label>
+            <label>
+              Match Type
+              <select id="matchType" required>
+                <option value="scrim">Scrim</option>
+                <option value="weekly-war">Weekly War</option>
+              </select>
+            </label>
+            <label>
+              Date
+              <input id="matchDate" type="date" required />
+            </label>
+            <label>
+              Kills
+              <input id="kills" type="number" min="0" required />
+            </label>
+            <label>
+              Position
+              <input id="position" type="number" min="1" max="100" required />
+            </label>
+            <label>
+              Points Chased Today
+              <input id="pointsChased" type="number" min="0" required />
+            </label>
+          </div>
+          <button type="submit">Save Match</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Add Achievement</h2>
+        <form id="achievementForm">
+          <div class="grid">
+            <label>
+              Player Name
+              <input id="achievementPlayer" type="text" required placeholder="e.g. Shadow" />
+            </label>
+            <label>
+              Date
+              <input id="achievementDate" type="date" required />
+            </label>
+            <label class="full">
+              Achievement
+              <input id="achievementText" type="text" required placeholder="e.g. Clutch 1v4 in final zone" />
+            </label>
+          </div>
+          <button type="submit">Save Achievement</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Team Dashboard</h2>
+        <div id="playerCards" class="cards"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
